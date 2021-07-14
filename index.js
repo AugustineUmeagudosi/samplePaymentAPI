@@ -12,4 +12,4 @@ require('./startup/router')(app);
 require('./startup/pageNotFound')(app);
 
 app.use(errorHandler);
-app.listen(port, () => console.log(`App listening on port ${port}...`));
+app.listen(port, () => console.log(`Listening on port ${port}...`));
