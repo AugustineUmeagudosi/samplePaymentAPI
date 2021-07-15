@@ -10,12 +10,7 @@ UserSchema = new Schema(
                 partialFilterExpression: { email: { $type: "string" } }
             }
         },
-        phone: {
-            type: String, trim: true, index: {
-                unique: true,
-                partialFilterExpression: { phone: { $type: "string" } }
-            }
-        },
+        phone: String,
         name: String,
         password: String,
         role: { type: String, default: 'User', enum: ['User'] }

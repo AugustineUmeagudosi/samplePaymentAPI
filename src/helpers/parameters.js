@@ -1,12 +1,12 @@
 //users
-const fooDetails = [
-    'id', 'topic', 'createdAt'
+const userDetails = [
+    "id", "name", "email", "phone", "role"
 ],
 
-barDetails = [
-    'id', 'url', 'topicId'
+adminDetails = [
+    "id", "name", "email", "role"
 ];
 
 module.exports = {
-    fooDetails, barDetails
+    userDetails, adminDetails
 };
