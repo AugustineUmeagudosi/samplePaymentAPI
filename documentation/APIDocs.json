@@ -1,0 +1,1336 @@
+{
+	"info": {
+		"_postman_id": "4a9bb479-92a3-489b-b7da-d8471bf76a05",
+		"name": "SamplePaymentAPI",
+		"description": "User authentication and registration endpoints can be located on the `users` folder.\n\nPayment endpoints are located on the `Payments` folder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Austin\",\r\n    \"email\": \"augustineumeagudosi@gail.com\",\r\n    \"phone\": \"2347039809517\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						},
+						"description": "Authentication token is located on the response header.. as 'Authorization'\n\nThe Authentication token expires in 10 hrs from the time of creation."
+					},
+					"response": [
+						{
+							"name": "201 response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Austin\",\r\n    \"email\": \"augustineumeagudosi@gail.com\",\r\n    \"phone\": \"2347039809517\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "499"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Jul 2021 23:16:19 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1626394525"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Authorization",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYwYzFjMzYyOTM0NDM5NzhiZDE5ZGUiLCJyb2xlIjoiVXNlciIsImlhdCI6MTYyNjM5MDk3OX0.MJ6zmShnFUNVHFd2uXDPT-Zk737CClWTALG1y2lW6V4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "192"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c0-50acfCe5QpC2tlCY6TxqVlCgNR4\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"You have been registered!\",\n    \"data\": {\n        \"id\": \"60f0c1c36293443978bd19de\",\n        \"name\": \"Austin\",\n        \"email\": \"augustineumeagudosi@gail.com\",\n        \"phone\": \"2347039809517\",\n        \"role\": \"User\"\n    }\n}"
+						},
+						{
+							"name": "400 response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Austin\",\r\n    \"email\": \"augustineumeagudosi@gail.com\",\r\n    \"phone\": \"2347039809517\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "499"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Jul 2021 23:19:07 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1626394709"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-wI6NUltOkrxMfCUltuhIIPwkekI\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Bad request\",\n    \"message\": \"Email already exists.\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"augustineumeagudosi@gail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						},
+						"description": "Authentication token is located on the response header.. as 'Authorization'\n\nThe Authentication token expires in 10 hrs from the time of creation."
+					},
+					"response": [
+						{
+							"name": "200 response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"augustineumeagudosi@gail.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "498"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Jul 2021 23:20:33 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1626394709"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Authorization",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYwYzFjMzYyOTM0NDM5NzhiZDE5ZGUiLCJyb2xlIjoiVXNlciIsImlhdCI6MTYyNjM5MTIzM30.c0327GkeclarHsv_Py461oLaErA-O0V0kO0su4He9Ow"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c7-OBK1B8zdZoH5S9+TiAZoe2CQyIQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"You have logged in successfully!\",\n    \"data\": {\n        \"id\": \"60f0c1c36293443978bd19de\",\n        \"name\": \"Austin\",\n        \"email\": \"augustineumeagudosi@gail.com\",\n        \"phone\": \"2347039809517\",\n        \"role\": \"User\"\n    }\n}"
+						},
+						{
+							"name": "400  response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"augustineumeagudosi@gail.com\",\r\n    \"password\": \"1234s56\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "497"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Jul 2021 23:23:02 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1626394709"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-zYFe28CTT9JW0p6wBLFzgP4fFhw\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Bad request\",\n    \"message\": \"Invalid email or password\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			],
+			"description": "User Authentication and registration services"
+		},
+		{
+			"name": "Admins",
+			"item": []
+		},
+		{
+			"name": "Payment APIs",
+			"item": [
+				{
+					"name": "Initialize Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{userToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 2000000,\r\n    \"currency\": \"NGN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/payments/initialize",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"payments",
+								"initialize"
+							]
+						},
+						"description": "This endpoint is only accessible to logged in users. \nNB: Always append `Bearer ` to the  token\n\nThe value for `amount` should be in kobo if `currency` is NGN, pesewas, if `currency` is GHS, and cents, if `currency` is ZAR.\n\n<h3>Usage</h3>\nThis endpoint is to be called after a user has entered an amount he/she is paying (or when a user clicks a button to checkout his cart). \n\nWhen payment is initialized successfully, this endpoint returns an `authorization_url` for the user to authorize the payment. Create a button on the front-end and name it `Authorize Payment` and set the `onClick` function to the `authorization_url` (returned by this API) such that when a user clicks it, it will link him to the Paystack's `complete payment` page to enter card details and authorize payment.\n\nWhen Authorize payment is successful, call the `finalize Payment` (PUT request) API (i.e. `http://18.118.1.150:5000/api/v1/payments/finalize/{{reference}}`) replace `{{reference}}` with the value returned under `reference` from this API's response Payload."
+					},
+					"response": [
+						{
+							"name": "Initialize Payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{userToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 20000,\r\n    \"currency\": \"NGN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/payments",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"payments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "499"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Jul 2021 11:07:56 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1626437253"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "187"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bb-Fn74xC+07wmrIyMhcHPW5ROSBnI\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Authorization URL created\",\n    \"data\": {\n        \"authorization_url\": \"https://checkout.paystack.com/k39cjnabzpqyx0f\",\n        \"access_code\": \"k39cjnabzpqyx0f\",\n        \"reference\": \"0xz0iodd3s\"\n    }\n}"
+						},
+						{
+							"name": "Initialize Payment 400 response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{userToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"augustineumeagudosi@gmail.com\",\r\n    \"amount\": 20000,\r\n    \"currency\": \"NGN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/payments",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"payments"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "499"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Jul 2021 13:03:49 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1626444152"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-P168rVk4g5LhdvU/xNrlw86cySQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Bad request\",\n    \"message\": \"invalid or expired token\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "Initialize Payment 400 response (payment initialization failed)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{userToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"augustineumeagudosi@gmail.com\",\r\n    \"amount\": 2000000,\r\n    \"currency\": \"NGN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/payments",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"payments"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "499"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Jul 2021 13:40:29 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1626446424"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"62-zmjk9POOMpTLGRMrkCaBeB89qDw\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Bad request\",\n    \"message\": \"Failed to initialize payment please try again later\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Finalize payment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{userToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/payments/finalize/icjeude51l",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"payments",
+								"finalize",
+								"icjeude51l"
+							]
+						},
+						"description": "This endpoint is only accessible to logged in users. \nNB: Always append `Bearer ` to the  token\n\n<h3>Usage</h3>\nThis endpoint is to be called after a user has successfully authorized a payment using the Paystack's `authorize payment` API.\n\nWhen Authorize payment is successful, call this API and append the value returned under `reference` from `initialize Payment` API's response Payload. see example below\n\n`http://18.118.1.150:5000/api/v1/payments/finalize/{{reference}}` replace `{{reference}}` with the value returned under `reference` from `initialize Payment` API's response Payload."
+					},
+					"response": [
+						{
+							"name": "Finalize payment - 400 response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{userToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/payments/finalize/0xz0iodd3s",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"payments",
+										"finalize",
+										"0xz0iodd3s"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "498"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Jul 2021 14:51:11 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1626450144"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-BfVa3lQNPOmBfBQw1AVlxtjXFLI\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Bad request\",\n    \"message\": \"Invalid payment reference.\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "My payment history",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{userToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/payments/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"payments",
+								""
+							]
+						},
+						"description": "This endpoint is only accessible to logged in users. \n\nIt lists the payment history of the currently logged in user"
+					},
+					"response": [
+						{
+							"name": "My payment history",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{userToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/payments/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"payments",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "500"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "499"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Jul 2021 15:10:37 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1626451835"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"575-iO2E3EDQ7KZ6h468Jd6+nVICIH8\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Here's your payment history\",\n    \"data\": [\n        {\n            \"_id\": \"60f186bf813be35338560889\",\n            \"userId\": {\n                \"_id\": \"60f0c1c36293443978bd19de\",\n                \"name\": \"Austin\"\n            },\n            \"amount\": 20000,\n            \"status\": \"Successful\"\n        },\n        {\n            \"_id\": \"60f187b8e6f03a406489778d\",\n            \"userId\": {\n                \"_id\": \"60f0c1c36293443978bd19de\",\n                \"name\": \"Austin\"\n            },\n            \"amount\": 20000,\n            \"status\": \"Successful\"\n        },\n        {\n            \"_id\": \"60f188725829142d48e1b55c\",\n            \"userId\": {\n                \"_id\": \"60f0c1c36293443978bd19de\",\n                \"name\": \"Austin\"\n            },\n            \"amount\": 20000,\n            \"status\": \"Failed\"\n        },\n        {\n            \"_id\": \"60f1887f5829142d48e1b55f\",\n            \"userId\": {\n                \"_id\": \"60f0c1c36293443978bd19de\",\n                \"name\": \"Austin\"\n            },\n            \"amount\": 20000,\n            \"status\": \"Failed\"\n        },\n        {\n            \"_id\": \"60f18b7ba7301d4b2007aa44\",\n            \"userId\": {\n                \"_id\": \"60f0c1c36293443978bd19de\",\n                \"name\": \"Austin\"\n            },\n            \"amount\": 2000000,\n            \"status\": \"Failed\"\n        },\n        {\n            \"_id\": \"60f18c4e678e1549a400ee1b\",\n            \"userId\": {\n                \"_id\": \"60f0c1c36293443978bd19de\",\n                \"name\": \"Austin\"\n            },\n            \"amount\": 2000000,\n            \"status\": \"Failed\"\n        },\n        {\n            \"_id\": \"60f194aabc128753e043f346\",\n            \"userId\": {\n                \"_id\": \"60f0c1c36293443978bd19de\",\n                \"name\": \"Austin\"\n            },\n            \"amount\": 2000000,\n            \"status\": \"Failed\"\n        },\n        {\n            \"_id\": \"60f194b1bc128753e043f34a\",\n            \"userId\": {\n                \"_id\": \"60f0c1c36293443978bd19de\",\n                \"name\": \"Austin\"\n            },\n            \"amount\": 2000000,\n            \"status\": \"Failed\"\n        },\n        {\n            \"_id\": \"60f19ae8457c5e43c81f59e9\",\n            \"userId\": {\n                \"_id\": \"60f0c1c36293443978bd19de\",\n                \"name\": \"Austin\"\n            },\n            \"amount\": 2000000,\n            \"status\": \"Failed\"\n        },\n        {\n            \"_id\": \"60f19e0a113141351cab2c12\",\n            \"userId\": {\n                \"_id\": \"60f0c1c36293443978bd19de\",\n                \"name\": \"Austin\"\n            },\n            \"amount\": 2000000,\n            \"status\": \"abandoned\",\n            \"reference\": \"icjeude51l\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "Payment services"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "adminToken",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYwYzFjMzYyOTM0NDM5NzhiZDE5ZGUiLCJyb2xlIjoiVXNlciIsImlhdCI6MTYyNjM5MjAzOCwiZXhwIjoxNjI2Mzk1NjM4fQ.WQrK7EUjBwj_EJmo2u7PZUVFMr0qaVxpofmkMfeuOEg"
+		},
+		{
+			"key": "userToken",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYwYzFjMzYyOTM0NDM5NzhiZDE5ZGUiLCJyb2xlIjoiVXNlciIsImlhdCI6MTYyNjQ0MTM1NCwiZXhwIjoxNjI2NDc3MzU0fQ.E9vIxVx6ZG0gEUqpifyzdvZT9fLKE_SjlyjPkopXlrM"
+		},
+		{
+			"key": "host",
+			"value": "http://localhost:5000/api/v1"
+		}
+	]
+}
