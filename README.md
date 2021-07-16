@@ -11,4 +11,4 @@ A boiler plate for NodeJS with MongoDB to make starting a new project easier for
 MongoDB Database and node v12 and above
 
 # Documentation.
-Please create the API Documentation accordingly
+The API documentation can be found at `https://www.getpostman.com/collections/514de060ebce104594fd` or at `./documentation/APIDocs` folder

@@ -5,12 +5,12 @@ const express = require('express'),
 accessControl = require('../helpers/middlewares/accessControl');
 
 // initialize payment
-router.post( '/', [auth], service.makePayment );
+router.post( '/initialize', [auth], service.makePayment );
 
 // verify payment with paymentRefNumber
 router.put( '/finalize/:paymentRefNumber', [auth], service.finalizePayment );
 
 // get a user's payment history
-router.get('/', [auth], service.makePayment);
+router.get('/', [auth], service.myPaymentHistory);
 
 module.exports = router;

@@ -5,16 +5,18 @@ PaymentSchema = new Schema(
     {
         userId: { 
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Users",
+            ref: "User",
             index: true,
-            required: false
+            required: true
         },
-        amount: String,
+        amount: {type: Number, required: true},
         currency: String,
-        status: { type: String, enum: ['Successful', 'Failed'] },
-        authorization_url: String,
-        access_code: String,
-        reference: String
+        payment_mode: String,
+        paid_at: Date,
+        status: { type: String, required: true },
+        authorization_url: {type: String, required: true},
+        access_code: {type: String, required: true, index: true,},
+        reference: {type: String, required: true, index: true,}
     }, 
     { timestamps: true }
 );

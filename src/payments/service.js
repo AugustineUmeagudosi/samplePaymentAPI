@@ -22,10 +22,10 @@ module.exports = {
         payment.userId = req.user._id;
         payment.amount = req.body.amount;
         payment.currency = req.body.currency;
-        payment.status = paystackResponse.data.status == true ? 'Pending' : 'Failed';
+        payment.status = paystackResponse.data.status == true ? 'pending' : 'failed';
         payment.authorization_url = paystackResponse.data.authorization_url;
         payment.access_code = paystackResponse.data.access_code;
-        payment.reference = paystackResponse.data.refernce;
+        payment.reference = paystackResponse.data.reference;
         await payment.save();
 
         const data = _.pick(payment, variables.paymentDetails);
@@ -39,7 +39,9 @@ module.exports = {
 
         // verify payment
         const verificationResponse = await paymentHandler.verifyPayment(req.params.paymentRefNumber);
-        payment.status = verificationResponse.data.status == 'success' ? 'Success' : 'Failed';
+        payment.status = verificationResponse.data.status;
+        payment.payment_mode = verificationResponse.data.channel;
+        payment.paid_at = verificationResponse.data.paid_at;
         await payment.save();
 
         const data = _.pick(payment, variables.paymentDetails);
@@ -48,7 +50,7 @@ module.exports = {
     },
 
     myPaymentHistory: async (req, res) => {
-        const payments = await Payment.find({userId: req.usser._id}).select(variables.paymentDetails).populate('userId', 'userId');
+        const payments = await Payment.find({userId: req.user._id}).select(variables.paymentDetailsMinor).populate('userId', 'name');
         if(payments.length == 0) return responseMessages.notFound('You have not made any payments on this platform', res);
 
         return responseMessages.success("Here's your payment history", payments, res);
