@@ -29,7 +29,7 @@ module.exports = {
         await payment.save();
 
         const data = _.pick(payment, variables.paymentDetails);
-        if(!paystackResponse.data.status) return responseMessages.badRequest('Failed to initialize payment please try again later', res);
+        if(!paystackResponse.data.status) return responseMessages.partialContent('Failed to initialize payment please try again later',data, res);
         return responseMessages.success(`Payment initialized successfully. Kindly click the link contained on the authorization_url to complete payment.`, data, res);
     },
 
