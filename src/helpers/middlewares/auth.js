@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken'),
     { User } = require('../../users/model'),
     responseMessages = require('../responseMessages'),
-    mongoose = require('mongoose');
+mongoose = require('mongoose');
 require('dotenv').config();
 
 module.exports = async function (req, res, next){

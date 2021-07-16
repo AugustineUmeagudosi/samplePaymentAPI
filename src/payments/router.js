@@ -4,7 +4,13 @@ const express = require('express'),
     auth = require('../helpers/middlewares/auth'),
 accessControl = require('../helpers/middlewares/accessControl');
 
-// create bar
+// initialize payment
 router.post( '/', [auth], service.makePayment );
+
+// verify payment with paymentRefNumber
+router.put( '/finalize/:paymentRefNumber', [auth], service.finalizePayment );
+
+// get a user's payment history
+router.get('/', [auth], service.makePayment);
 
 module.exports = router;

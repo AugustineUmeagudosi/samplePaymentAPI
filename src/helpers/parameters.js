@@ -5,8 +5,12 @@ const userDetails = [
 
 adminDetails = [
     "id", "name", "email", "role"
+],
+
+paymentDetails = [
+    'id', 'userId', 'amount', 'status', 'authorization_url', 'access_code', 'reference'
 ];
 
 module.exports = {
-    userDetails, adminDetails
+    userDetails, adminDetails, paymentDetails
 };

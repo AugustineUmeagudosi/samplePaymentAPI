@@ -10,7 +10,11 @@ PaymentSchema = new Schema(
             required: false
         },
         amount: String,
-        comment: String
+        currency: String,
+        status: { type: String, enum: ['Successful', 'Failed'] },
+        authorization_url: String,
+        access_code: String,
+        reference: String
     }, 
     { timestamps: true }
 );
