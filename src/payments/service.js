@@ -6,8 +6,8 @@ helpers = require('../helpers/subroutines');
 
 
 module.exports = {
-    create: async (req, res) => {
-        const { error } = validate.createSubscription(req.body);
+    makePayment: async (req, res) => {
+        const { error } = validate.makePayment(req.body);
         if(error) return responseMessages.badRequest( error.details[0].message, res );
 
         return responseMessages.created(`You have successfully created bar.`, data, res);

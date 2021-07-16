@@ -4,10 +4,10 @@ const express = require('express'),
     auth = require('../helpers/middlewares/auth'),
 accessControl = require('../helpers/middlewares/accessControl');
 
-// user registration
-router.post( '/register',  service.register );
+// admin registration
+router.post( '/createAdmin', [auth, accessControl.isSuperAdmin], service.createAdmin );
 
-// user login
+// admin login
 router.post( '/login',  service.login );
 
 module.exports = router;

@@ -1,9 +1,10 @@
 const Joi = require('@hapi/joi');
 
 module.exports = {
-  createSubscription: (subscription) => {
+  makePayment: (subscription) => {
     const schema = Joi.object().keys({
-      url: Joi.string().required(),
+      amount: Joi.number().required(),
+      comment: Joi.number().optional().allow(null),
     });
   
     return schema.validate(subscription);

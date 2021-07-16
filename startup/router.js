@@ -1,6 +1,7 @@
-const express = require('express');
-const userRouter = require('../src/users/router');
-const paymentRouter = require('../src/payments/router');
+const express = require('express'),
+    userRouter = require('../src/users/router'),
+    adminRouter = require('../src/admins/router'),
+paymentRouter = require('../src/payments/router');
 
 module.exports = function (app) {
     app.use(express.json({ limit:"5mb" }));
@@ -11,5 +12,6 @@ module.exports = function (app) {
     ));
 
     app.use('/api/v1/users', userRouter);
+    app.use('/api/v1/admins', adminRouter);
     app.use('/api/v1/payments', paymentRouter);
 };
