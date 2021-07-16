@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Austin\",\r\n    \"email\": \"augustineumeagudosi@gail.com\",\r\n    \"phone\": \"2347039809517\",\r\n    \"password\": \"123456\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Austin\",\r\n    \"email\": \"augustineumeagudosi@gmail.com\",\r\n    \"phone\": \"2347039809517\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -291,7 +291,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"augustineumeagudosi@gail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"raw": "{\r\n    \"email\": \"augustineumeagudosi@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -991,14 +991,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/payments/finalize/icjeude51l",
+							"raw": "{{host}}/payments/finalize/m3hke6op0a",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"payments",
 								"finalize",
-								"icjeude51l"
+								"m3hke6op0a"
 							]
 						},
 						"description": "This endpoint is only accessible to logged in users. \nNB: Always append `Bearer ` to the  token\n\n<h3>Usage</h3>\nThis endpoint is to be called after a user has successfully authorized a payment using the Paystack's `authorize payment` API.\n\nWhen Authorize payment is successful, call this API and append the value returned under `reference` from `initialize Payment` API's response Payload. see example below\n\n`http://18.118.1.150:5000/api/v1/payments/finalize/{{reference}}` replace `{{reference}}` with the value returned under `reference` from `initialize Payment` API's response Payload."
@@ -1297,6 +1297,23 @@
 				}
 			],
 			"description": "Payment services"
+		},
+		{
+			"name": "Welcome page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/welcome",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"welcome"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -1326,11 +1343,11 @@
 		},
 		{
 			"key": "userToken",
-			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYwYzFjMzYyOTM0NDM5NzhiZDE5ZGUiLCJyb2xlIjoiVXNlciIsImlhdCI6MTYyNjQ0MTM1NCwiZXhwIjoxNjI2NDc3MzU0fQ.E9vIxVx6ZG0gEUqpifyzdvZT9fLKE_SjlyjPkopXlrM"
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGYxYjY1NTQzMTdlNDQ1MzBiZDc1YmIiLCJyb2xlIjoiVXNlciIsImlhdCI6MTYyNjQ1MzU5MCwiZXhwIjoxNjI2NDg5NTkwfQ.OuaCHs5tvxHSLHszYVKpl3gciJdlI1iXwZunFxhOj1Q"
 		},
 		{
 			"key": "host",
-			"value": "http://localhost:5000/api/v1"
+			"value": "http://18.118.1.150:5000/api/v1"
 		}
 	]
 }
